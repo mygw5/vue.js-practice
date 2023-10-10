@@ -12,10 +12,12 @@
       addItem: function(event) {
         event.preventDefault();
         if (this.newItem == "") return;
-        this.todos.push ({
-          item: this.newItem
+          this.todos.push ({
+            item: this.newItem,
+            isDone: false
         });
-        this.newItem = "";
+
+          this.newItem = "";
       },
 
       deleteItem: function(todo) {

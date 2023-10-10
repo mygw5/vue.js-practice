@@ -7,10 +7,11 @@
   </head>
   <body>
     <div id="app" class="container">
-      <h1>Todos</h1>
+      <h1>Todoリスト</h1>
       <ul>
-        <li v-for="todo in todos">
-          {{ todo.item }}
+        <li v-for="(todo, index) in todos">
+          <input type="checkbox" v-model="todo.isDone" />
+          <span v-bind:class="{done:todo.isDone}">{{ todo.item }}</span>
           <button v-on:click="deleteItem(todo)">削除</button>
         </li>
 
