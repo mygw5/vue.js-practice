@@ -9,11 +9,15 @@
     <div id="app" class="container">
       <h1>Todos</h1>
       <ul>
-        <li v-for="todo in todos">{{ todo }}</li>
+        <li v-for="todo in todos">
+          {{ todo.item }}
+          <button v-on:click="deleteItem(todo)">削除</button>
+        </li>
+
       </ul>
       <form>
-        <input type="text"/>
-        <input type="submit" value="Add"/>
+        <input type="text" v-model="newItem"/>
+        <button v-on:click="addItem">追加</button>
       </form>
     </div>
     <!-- 学習用URL最新バージョンが扱うことができる -->

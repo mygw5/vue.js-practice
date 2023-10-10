@@ -4,11 +4,24 @@
   var vm = new Vue({
     el: '#app',
     data: {
-      todos: [
-        'task 1',
-        'task 2',
-        'task 3'
-      ]
+      newItem: "",
+      todos: []
+    },
+
+    methods: {
+      addItem: function(event) {
+        event.preventDefault();
+        if (this.newItem == "") return;
+        this.todos.push ({
+          item: this.newItem
+        });
+        this.newItem = "";
+      },
+
+      deleteItem: function(todo) {
+        var index = this.todos.indexOf(todo);
+        this.todos.splice(index, 1)
+      }
     }
   });
 })();
