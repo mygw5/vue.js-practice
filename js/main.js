@@ -4,7 +4,8 @@
   var vm = new Vue({
     el: '#app',
     data: {
-      name: 'tanaka'
+      name: 'tanaka',
+      age: '20'
     }
   });
 })();
