@@ -19,7 +19,10 @@
       <p v-else>未成年です</p>
 
       <p v-show="age >=20">テーマパーク入場料800円です</p>
-      <p v-show="age <20">テーマパーク入場料400円です</p>
+      <p v-show="age <20 && age >3">
+          テーマパーク入場料400円です
+
+      </p>
       <p v-show="age <=3">テーマパーク入場料無料</p>
 
       <p><input type="text" v-model="name"></p>
